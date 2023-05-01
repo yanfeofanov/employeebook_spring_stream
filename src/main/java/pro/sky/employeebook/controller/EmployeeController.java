@@ -21,6 +21,10 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
+    public String hello(){
+        return "hello";
+    }
+
     @GetMapping("/add")
     public Employee addEmployee(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName, @RequestParam("salary") int salary, @RequestParam("department") int department) {
         return employeeService.addEmployee(new Employee(firstName, lastName, salary, department));
